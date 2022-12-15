@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="108d2618-e3df-4fc5-9970-932f90c77b86" name="Changes" comment="window title ready">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/macos.icns" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/windows.ico" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="108d2618-e3df-4fc5-9970-932f90c77b86" name="Changes" comment="window icon ready">
       <change beforePath="$PROJECT_DIR$/src/main/java/app/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/Application.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -70,7 +67,7 @@
       <option name="presentableId" value="Default" />
       <updated>1670240654702</updated>
       <workItem from="1670240655977" duration="897000" />
-      <workItem from="1671088066042" duration="1135000" />
+      <workItem from="1671088066042" duration="1445000" />
     </task>
     <task id="LOCAL-00001" summary="skija connected">
       <created>1670240820299</created>
@@ -114,7 +111,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671088464315</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="window icon ready">
+      <created>1671089372616</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1671089372616</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -138,6 +142,7 @@
     <MESSAGE value="window works" />
     <MESSAGE value="java doc" />
     <MESSAGE value="window title ready" />
-    <option name="LAST_COMMIT_MESSAGE" value="window title ready" />
+    <MESSAGE value="window icon ready" />
+    <option name="LAST_COMMIT_MESSAGE" value="window icon ready" />
   </component>
 </project>
