@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="108d2618-e3df-4fc5-9970-932f90c77b86" name="Changes" comment="drawing rect works">
-      <change afterPath="$PROJECT_DIR$/src/main/java/misc/Vector2i.java" afterDir="false" />
+    <list default="true" id="108d2618-e3df-4fc5-9970-932f90c77b86" name="Changes" comment="int vector">
+      <change afterPath="$PROJECT_DIR$/src/main/java/misc/CoordinateSystem2i.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/Application.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,7 +68,7 @@
       <option name="presentableId" value="Default" />
       <updated>1670240654702</updated>
       <workItem from="1670240655977" duration="897000" />
-      <workItem from="1671088066042" duration="3227000" />
+      <workItem from="1671088066042" duration="3548000" />
     </task>
     <task id="LOCAL-00001" summary="skija connected">
       <created>1670240820299</created>
@@ -139,7 +140,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671090994323</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="int vector">
+      <created>1671091306970</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1671091306970</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -167,6 +175,7 @@
     <MESSAGE value="canvas works" />
     <MESSAGE value="add setColor()" />
     <MESSAGE value="drawing rect works" />
-    <option name="LAST_COMMIT_MESSAGE" value="drawing rect works" />
+    <MESSAGE value="int vector" />
+    <option name="LAST_COMMIT_MESSAGE" value="int vector" />
   </component>
 </project>
