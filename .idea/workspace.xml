@@ -4,10 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="108d2618-e3df-4fc5-9970-932f90c77b86" name="Changes" comment="int vector">
-      <change afterPath="$PROJECT_DIR$/src/main/java/panels/Panel.java" afterDir="false" />
+    <list default="true" id="108d2618-e3df-4fc5-9970-932f90c77b86" name="Changes" comment="panel created">
+      <change afterPath="$PROJECT_DIR$/src/main/java/app/Fonts.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/controls/Label.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/app/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/Colors.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/Colors.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,7 +83,7 @@
       <updated>1670240654702</updated>
       <workItem from="1670240655977" duration="897000" />
       <workItem from="1671088066042" duration="3548000" />
-      <workItem from="1673259358460" duration="309000" />
+      <workItem from="1673259358460" duration="2180000" />
     </task>
     <task id="LOCAL-00001" summary="skija connected">
       <created>1670240820299</created>
@@ -160,7 +162,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671091306970</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="panel created">
+      <created>1673259684545</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1673259684545</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -189,6 +198,7 @@
     <MESSAGE value="add setColor()" />
     <MESSAGE value="drawing rect works" />
     <MESSAGE value="int vector" />
-    <option name="LAST_COMMIT_MESSAGE" value="int vector" />
+    <MESSAGE value="panel created" />
+    <option name="LAST_COMMIT_MESSAGE" value="panel created" />
   </component>
 </project>
