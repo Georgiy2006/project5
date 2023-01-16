@@ -30,6 +30,7 @@ public abstract class Panel implements Consumer<Event> {
     /**
      * цвет подложки
      */
+    protected final int backgroundColor;
     /**
      * последнее движение мыши
      */
@@ -42,7 +43,7 @@ public abstract class Panel implements Consumer<Event> {
      * последняя СК окна
      */
     protected CoordinateSystem2i lastWindowCS;
-    protected final int backgroundColor;
+
 
     /**
      * Конструктор панели
