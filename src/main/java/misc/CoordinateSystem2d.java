@@ -103,7 +103,7 @@ public class CoordinateSystem2d {
 
 
     /**
-     * Получить координаты вектора в текущей систему координат
+     * Получить координаты вектора в текущей системе координат
      *
      * @param coords           координаты вектора в другой системе координат
      * @param coordinateSystem система координат, в которой заданы координаты вектора
@@ -114,7 +114,7 @@ public class CoordinateSystem2d {
     }
 
     /**
-     * Получить координаты вектора в текущей систему координат
+     * Получить координаты вектора в текущей системе координат
      *
      * @param x                координата X вектора в другой системе координат
      * @param y                координата Y вектора в другой системе координат
@@ -123,13 +123,13 @@ public class CoordinateSystem2d {
      */
     public Vector2d getCoords(double x, double y, CoordinateSystem2d coordinateSystem) {
         return new Vector2d(
-                (x - coordinateSystem.min.x) * size.x / coordinateSystem.size.x + min.x,
-                (y - coordinateSystem.min.y) * size.y / coordinateSystem.size.y + min.y
+                (int) ((x - coordinateSystem.getMin().x) * (size.x - 1) / coordinateSystem.getSize().x + min.x),
+                (int) ((y - coordinateSystem.getMin().y) * (size.y - 1) / coordinateSystem.getSize().y + min.y)
         );
     }
 
     /**
-     * Получить координаты вектора в текущей систему координат
+     * Получить координаты вектора в текущей системе координат
      *
      * @param coords           координаты вектора в другой системе координат
      * @param coordinateSystem система координат, в которой заданы координаты вектора
@@ -140,7 +140,7 @@ public class CoordinateSystem2d {
     }
 
     /**
-     * Получить координаты вектора в текущей систему координат
+     * Получить координаты вектора в текущей системе координат
      *
      * @param x                координата X вектора в другой системе координат
      * @param y                координата Y вектора в другой системе координат
@@ -153,7 +153,6 @@ public class CoordinateSystem2d {
                 (y - coordinateSystem.getMin().y) * size.y / (coordinateSystem.getSize().y - 1) + min.y
         );
     }
-
     /**
      * Получить максимальную координата
      *
