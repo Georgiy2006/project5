@@ -4,13 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="108d2618-e3df-4fc5-9970-932f90c77b86" name="Changes" comment="text centering works">
-      <change afterPath="$PROJECT_DIR$/src/main/java/panels/PanelControl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/panels/PanelHelp.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/panels/PanelLog.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/panels/PanelRendering.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/Application.java" afterDir="false" />
+    <list default="true" id="108d2618-e3df-4fc5-9970-932f90c77b86" name="Changes" comment="4 panels">
+      <change afterPath="$PROJECT_DIR$/src/main/java/app/Task.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,7 +69,7 @@
       <workItem from="1670240655977" duration="897000" />
       <workItem from="1671088066042" duration="3548000" />
       <workItem from="1673259358460" duration="3663000" />
-      <workItem from="1673863824164" duration="640000" />
+      <workItem from="1673863824164" duration="1122000" />
     </task>
     <task id="LOCAL-00001" summary="skija connected">
       <created>1670240820299</created>
@@ -174,7 +169,14 @@
       <option name="project" value="LOCAL" />
       <updated>1673262779213</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="4 panels">
+      <created>1673864687481</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1673864687481</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -206,6 +208,7 @@
     <MESSAGE value="panel created" />
     <MESSAGE value="render text" />
     <MESSAGE value="text centering works" />
-    <option name="LAST_COMMIT_MESSAGE" value="text centering works" />
+    <MESSAGE value="4 panels" />
+    <option name="LAST_COMMIT_MESSAGE" value="4 panels" />
   </component>
 </project>
