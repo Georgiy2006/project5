@@ -1,5 +1,6 @@
 package app;
 
+import controls.InputFactory;
 import controls.Label;
 import io.github.humbleui.jwm.*;
 import io.github.humbleui.jwm.skija.EventFrameSkija;
@@ -106,7 +107,7 @@ public class Application implements Consumer<Event> {
         label3 = new Label(window, true, PANEL_BACKGROUND_COLOR, PANEL_PADDING,
                 4, 4, 2, 0, 1, 1, "Это тоже заголовок", true, true);
 
-
+        // добавление вручную
         window.setEventListener(this);
 
         window.setWindowSize(900, 900);
@@ -176,6 +177,8 @@ public class Application implements Consumer<Event> {
         panelLog.paint(canvas, windowCS);
         panelHelp.paint(canvas, windowCS);
         canvas.restore();
+
+
     }
 
 }
