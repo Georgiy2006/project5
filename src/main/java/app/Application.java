@@ -165,7 +165,7 @@ public class Application implements Consumer<Event> {
             // получаем поверхность рисования
             Surface s = ee.getSurface();
             // очищаем её канвас заданным цветом
-            paint(s.getCanvas(), new CoordinateSystem2i(s.getWidth(), s.getHeight()));
+            paint(s.getCanvas(), new CoordinateSystem2i(0, 0, s.getWidth(), s.getHeight()));
         }// кнопки клавиатуры
         else if (e instanceof EventKey eventKey) {
             // кнопка нажата с Ctrl

@@ -1,9 +1,13 @@
 package app;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import io.github.humbleui.jwm.MouseButton;
 import io.github.humbleui.skija.Canvas;
 import io.github.humbleui.skija.Paint;
 import io.github.humbleui.skija.Rect;
+import lombok.Getter;
 import misc.CoordinateSystem2d;
 import misc.CoordinateSystem2i;
 import misc.Vector2d;
@@ -13,26 +17,31 @@ import panels.PanelLog;
 import java.util.ArrayList;
 import java.util.concurrent.ThreadLocalRandom;
 
+
 /**
  * Класс задачи
  */
+@JsonTypeInfo(use = JsonTypeInfo.Id.CLASS, property = "@class")
 public class Task {
     /**
      * Текст задачи
      */
     public static final String TASK_TEXT = """
             ПОСТАНОВКА ЗАДАЧИ:
-            Заданы два множества точек в вещественном пространстве.
-            Требуется построить пересечения и разность
-            этих множеств""";
+            Заданы два множества точек в вещественном
+            пространстве. Требуется построить пересечение
+            и разность этих множеств""";
+
 
     /**
      * Вещественная система координат задачи
      */
+    @Getter
     private final CoordinateSystem2d ownCS;
     /**
      * Список точек
      */
+    @Getter
     private final ArrayList<Point> points;
     /**
      * Размер точки
@@ -49,7 +58,11 @@ public class Task {
      * @param ownCS  СК задачи
      * @param points массив точек
      */
-    public Task(CoordinateSystem2d ownCS, ArrayList<Point> points) {
+    @JsonCreator
+    public Task(
+            @JsonProperty("ownCS") CoordinateSystem2d ownCS,
+            @JsonProperty("points") ArrayList<Point> points
+    ) {
         this.ownCS = ownCS;
         this.points = points;
     }
@@ -121,7 +134,7 @@ public class Task {
         // координату этой решётки (их всего 30х30=900).
         // после нам останется только перевести координаты на решётке
         // в координаты СК задачи
-        CoordinateSystem2i addGrid = new CoordinateSystem2i(30, 30);
+        CoordinateSystem2i addGrid = new CoordinateSystem2i(0, 0, 30, 30);
 
         // повторяем заданное количество раз
         for (int i = 0; i < cnt; i++) {
