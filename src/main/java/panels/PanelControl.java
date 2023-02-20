@@ -101,6 +101,7 @@ public class PanelControl extends GridPanel {
         });
         buttons.add(addToFirstSet);
 
+
         Button addToSecondSet = new Button(
                 window, false, backgroundColor, PANEL_PADDING,
                 6, 7, 3, 3, 3, 1, "Добавить во второе\nмножество",
