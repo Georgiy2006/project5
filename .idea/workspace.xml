@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="108d2618-e3df-4fc5-9970-932f90c77b86" name="Changes" comment="buttons work">
+    <list default="true" id="108d2618-e3df-4fc5-9970-932f90c77b86" name="Changes" comment="random points">
       <change beforePath="$PROJECT_DIR$/src/main/java/app/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/Task.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -71,7 +71,7 @@
       <workItem from="1673259358460" duration="3663000" />
       <workItem from="1673863824164" duration="6175000" />
       <workItem from="1676531638084" duration="2008000" />
-      <workItem from="1676888876751" duration="3125000" />
+      <workItem from="1676888876751" duration="3432000" />
     </task>
     <task id="LOCAL-00001" summary="skija connected">
       <created>1670240820299</created>
@@ -248,7 +248,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676891776348</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="random points">
+      <created>1676892180720</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1676892180720</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -266,7 +273,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="skija connected" />
     <MESSAGE value="classes" />
     <MESSAGE value="events consumer works" />
     <MESSAGE value="window works" />
@@ -291,6 +297,7 @@
     <MESSAGE value="input select works" />
     <MESSAGE value="input tab work" />
     <MESSAGE value="buttons work" />
-    <option name="LAST_COMMIT_MESSAGE" value="buttons work" />
+    <MESSAGE value="random points" />
+    <option name="LAST_COMMIT_MESSAGE" value="random points" />
   </component>
 </project>
