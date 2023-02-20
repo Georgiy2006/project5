@@ -65,6 +65,7 @@ public class Input extends GridPanel {
         this.vcentered = vcentered;
         this.textColor = textColor;
     }
+
     /**
      * Установить фокус на это поле ввода
      */
@@ -74,6 +75,7 @@ public class Input extends GridPanel {
         // выделяем текущее поле ввода
         this.focused = true;
     }
+
     /**
      * Возвращает флаг, установлен ли фокус на это поле ввода
      *
@@ -86,7 +88,7 @@ public class Input extends GridPanel {
     /**
      * Метод под рисование в конкретной реализации
      *
-     * @param canvas область рисования
+     * @param canvas   область рисования
      * @param windowCS СК окна
      */
     @Override
@@ -197,6 +199,38 @@ public class Input extends GridPanel {
             // для правильной конвертации, если нужно, заменяем плавающую запятую
             // на плавающую точку
             Integer.parseInt(text);
+            return true;
+        } catch (NumberFormatException e) {
+            return false;
+        }
+    }
+
+    /**
+     * Получить вещественное значение из поля ввода
+     *
+     * @return возвращает значение, если всё ок, в противном случае вернёт 0
+     */
+    public double doubleValue() {
+        try {
+            // для правильной конвертации, если нужно, заменяем плавающую запятую
+            // на плавающую точку
+            return Double.parseDouble(text.replace(",", "."));
+        } catch (NumberFormatException e) {
+            System.out.println("ошибка преобразования");
+        }
+        return 0;
+    }
+
+    /**
+     * Проверяет, лежит ли в поле ввода правильное вещественное число
+     *
+     * @return флаг
+     */
+    public boolean hasValidDoubleValue() {
+        try {
+            // для правильной конвертации, если нужно, заменяем плавающую запятую
+            // на плавающую точку
+            Double.parseDouble(text.replace(",", "."));
             return true;
         } catch (NumberFormatException e) {
             return false;
