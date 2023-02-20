@@ -4,7 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="108d2618-e3df-4fc5-9970-932f90c77b86" name="Changes" comment="json works">
+    <list default="true" id="108d2618-e3df-4fc5-9970-932f90c77b86" name="Changes" comment="solve button">
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/Colors.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/Colors.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/app/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/Task.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/panels/PanelControl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/panels/PanelControl.java" afterDir="false" />
     </list>
@@ -72,7 +73,7 @@
       <workItem from="1673259358460" duration="3663000" />
       <workItem from="1673863824164" duration="6175000" />
       <workItem from="1676531638084" duration="2008000" />
-      <workItem from="1676888876751" duration="5433000" />
+      <workItem from="1676888876751" duration="5757000" />
     </task>
     <task id="LOCAL-00001" summary="skija connected">
       <created>1670240820299</created>
@@ -270,7 +271,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676894154813</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="solve button">
+      <created>1676894341690</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1676894341690</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -288,7 +296,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="window works" />
     <MESSAGE value="java doc" />
     <MESSAGE value="window title ready" />
     <MESSAGE value="window icon ready" />
@@ -313,6 +320,7 @@
     <MESSAGE value="random points" />
     <MESSAGE value="control beginning" />
     <MESSAGE value="json works" />
-    <option name="LAST_COMMIT_MESSAGE" value="json works" />
+    <MESSAGE value="solve button" />
+    <option name="LAST_COMMIT_MESSAGE" value="solve button" />
   </component>
 </project>
