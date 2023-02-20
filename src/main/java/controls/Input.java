@@ -93,7 +93,17 @@ public class Input extends GridPanel {
                 paint.setColor(textColor);
                 // рисуем линию текста
                 canvas.drawTextLine(line, 0, 0, paint);
+                // если время рисовать курсор
+                if (InputFactory.cursorDraw()) {
+                    // смещаем область рисования
+                    canvas.translate(line.getWidth(), 0);
+                    // рисуем его
+                    canvas.drawRect(Rect.makeXYWH(0, metrics.getAscent(), 2, metrics.getHeight()), paint);
+                }
             }
+            // если время рисовать курсор
+
+
             // восстанавливаем область рисования
             canvas.restore();
 
@@ -110,37 +120,32 @@ public class Input extends GridPanel {
     public void accept(Event e) {
         // вызываем обработчик предка
         super.accept(e);
-    }
+        // если вводится текст
+        if (e instanceof EventTextInput ee) {
+            text += ee.getText()
+                    .replace((char) 9 + "", "") // Tab
+                    .replace((char) 27 + "", ""); // Esc
+            window.requestFrame();
+            // если нажимается клавиша клавиатуры(нужно для управляющих команд)
+        } else if (e instanceof EventKey ee) {
+            if (ee.isPressed()) {
+                // получаем код клавиши
+                Key key = ee.getKey();
+                // перебираем варианты
+                switch (key) {
+                    // если бэкспейс
+                    case BACKSPACE -> {
+                        // если текст непустой
+                        if (!text.isEmpty())
+                            // удаляем из него 1 символ
+                            text = text.substring(0, text.length() - 1);
 
-    /**
-     * Получить вещественное значение из поля ввода
-     *
-     * @return возвращает значение, если всё ок, в противном случае вернёт 0
-     */
-    public double doubleValue() {
-        try {
-            // для правильной конвертации, если нужно, заменяем плавающую запятую
-            // на плавающую точку
-            return Double.parseDouble(text.replace(",", "."));
-        } catch (NumberFormatException e) {
-            System.out.println("ошибка преобразования");
-        }
-        return 0;
-    }
-
-    /**
-     * Проверяет, лежит ли в поле ввода правильное вещественное число
-     *
-     * @return флаг
-     */
-    public boolean hasValidDoubleValue() {
-        try {
-            // для правильной конвертации, если нужно, заменяем плавающую запятую
-            // на плавающую точку
-            Double.parseDouble(text.replace(",", "."));
-            return true;
-        } catch (NumberFormatException e) {
-            return false;
+                    }
+                    // если esc
+                    case ESCAPE -> {
+                    }
+                }
+            }
         }
     }
 

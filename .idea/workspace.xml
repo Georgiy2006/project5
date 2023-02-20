@@ -4,13 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="108d2618-e3df-4fc5-9970-932f90c77b86" name="Changes" comment="log works">
-      <change afterPath="$PROJECT_DIR$/src/main/java/controls/Input.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controls/InputFactory.java" afterDir="false" />
+    <list default="true" id="108d2618-e3df-4fc5-9970-932f90c77b86" name="Changes" comment="prelim input works">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/app/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/Application.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/Colors.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/Colors.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/panels/PanelControl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/panels/PanelControl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controls/Input.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controls/Input.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/panels/PanelRendering.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/panels/PanelRendering.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,7 +73,8 @@
       <workItem from="1671088066042" duration="3548000" />
       <workItem from="1673259358460" duration="3663000" />
       <workItem from="1673863824164" duration="6175000" />
-      <workItem from="1676531638084" duration="1598000" />
+      <workItem from="1676531638084" duration="2008000" />
+      <workItem from="1676888876751" duration="956000" />
     </task>
     <task id="LOCAL-00001" summary="skija connected">
       <created>1670240820299</created>
@@ -217,7 +216,14 @@
       <option name="project" value="LOCAL" />
       <updated>1673869897444</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="prelim input works">
+      <created>1676533552332</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1676533552332</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -255,6 +261,7 @@
     <MESSAGE value="task rendering works" />
     <MESSAGE value="adding points works" />
     <MESSAGE value="log works" />
-    <option name="LAST_COMMIT_MESSAGE" value="log works" />
+    <MESSAGE value="prelim input works" />
+    <option name="LAST_COMMIT_MESSAGE" value="prelim input works" />
   </component>
 </project>
