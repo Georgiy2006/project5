@@ -22,6 +22,14 @@ public class InputFactory {
     /**
      * флаг, нужно ли рисовать курсоа
      */
+    /**
+     * Снять фокус со всех полей ввода
+     */
+    public static void defocusAll() {
+        // снимаем фокусы
+        for (Input input : inputs)
+            input.focused = false;
+    }
     private static boolean cursorDraw = true;
 
     static {

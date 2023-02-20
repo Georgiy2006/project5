@@ -22,6 +22,12 @@ public class Input extends GridPanel {
     /**
      * Смещение для красивого отображения текста
      */
+    /**
+     * флаг, помещён ли сейчас фокус на это поле ввода
+     * (модификатор доступа по умолчанию, чтобы был доступен
+     * фабрике InputFactory внутри пакета)
+     */
+    boolean focused = false;
     private static final int LOCAL_PADDING = 8;
     /**
      * Флаг, нужно ли выравнивать текст по центру по вертикали
@@ -59,7 +65,23 @@ public class Input extends GridPanel {
         this.vcentered = vcentered;
         this.textColor = textColor;
     }
-
+    /**
+     * Установить фокус на это поле ввода
+     */
+    public void setFocus() {
+        // снимаем фокус со всех полей ввода
+        InputFactory.defocusAll();
+        // выделяем текущее поле ввода
+        this.focused = true;
+    }
+    /**
+     * Возвращает флаг, установлен ли фокус на это поле ввода
+     *
+     * @return флаг
+     */
+    public boolean isFocused() {
+        return focused;
+    }
 
     /**
      * Метод под рисование в конкретной реализации
