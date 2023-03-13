@@ -118,7 +118,7 @@ public class Input extends GridPanel {
                 // рисуем линию текста
                 canvas.drawTextLine(line, 0, 0, paint);
                 // если время рисовать курсор
-                if (InputFactory.cursorDraw()) {
+                if (InputFactory.cursorDraw() && isFocused()) {
                     // смещаем область рисования
                     canvas.translate(line.getWidth(), 0);
                     // рисуем его
