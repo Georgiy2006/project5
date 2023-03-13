@@ -3,6 +3,7 @@ package misc;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import panels.PanelLog;
 
 import java.util.Objects;
 
@@ -144,6 +145,31 @@ public class CoordinateSystem2d {
     public Vector2d getCoords(Vector2d coords, CoordinateSystem2d coordinateSystem) {
         return getCoords(coords.x, coords.y, coordinateSystem);
     }
+    /**
+     * Получить координаты вектора в текущей систему координат
+     *
+     * @param coords           координаты вектора в другой системе координат
+     * @param coordinateSystem система координат, в которой заданы координаты вектора
+     * @return координаты вектора в текущей системе координат
+     */
+    public Vector2d getCoords(Vector2i coords, CoordinateSystem2i coordinateSystem) {
+        return this.getCoords(coords.x, coords.y, coordinateSystem);
+    }
+
+    /**
+     * Получить координаты вектора в текущей систему координат
+     *
+     * @param x                координата X вектора в другой системе координат
+     * @param y                координата Y вектора в другой системе координат
+     * @param coordinateSystem система координат, в которой заданы координаты вектора
+     * @return координаты вектора в текущей системе координат
+     */
+    public Vector2d getCoords(int x, int y, CoordinateSystem2i coordinateSystem) {
+        return new Vector2d(
+                (x - coordinateSystem.getMin().x) * size.x / (coordinateSystem.getSize().x - 1) + min.x,
+                (y - coordinateSystem.getMin().y) * size.y / (coordinateSystem.getSize().y - 1) + min.y
+        );
+    }
 
     /**
      * Получить координаты вектора в текущей системе координат
@@ -159,31 +185,36 @@ public class CoordinateSystem2d {
                 (int) ((y - coordinateSystem.getMin().y) * (size.y - 1) / coordinateSystem.getSize().y + min.y)
         );
     }
-
     /**
-     * Получить координаты вектора в текущей системе координат
+     * Масштабировать СК пропорционально
      *
-     * @param coords           координаты вектора в другой системе координат
-     * @param coordinateSystem система координат, в которой заданы координаты вектора
-     * @return координаты вектора в текущей системе координат
+     * @param s      коэффициент
+     * @param center центр масштабирования
      */
-    public Vector2d getCoords(Vector2i coords, CoordinateSystem2i coordinateSystem) {
-        return this.getCoords(coords.x, coords.y, coordinateSystem);
-    }
+    public void scale(double s, Vector2d center) {
+        // если центр масштабирования находится вне СК
+        if (!checkCoords(center)) {
+            PanelLog.warning("центр масштабирования находится вне области");
+            return;
+        }
 
-    /**
-     * Получить координаты вектора в текущей системе координат
-     *
-     * @param x                координата X вектора в другой системе координат
-     * @param y                координата Y вектора в другой системе координат
-     * @param coordinateSystem система координат, в которой заданы координаты вектора
-     * @return координаты вектора в текущей системе координат
-     */
-    public Vector2d getCoords(int x, int y, CoordinateSystem2i coordinateSystem) {
-        return new Vector2d(
-                (x - coordinateSystem.getMin().x) * size.x / (coordinateSystem.getSize().x - 1) + min.x,
-                (y - coordinateSystem.getMin().y) * size.y / (coordinateSystem.getSize().y - 1) + min.y
+        // рассчитываем новые размеры СК
+        Vector2d newSize = Vector2d.mul(size, s);
+
+        // получаем коэффициенты масштабирования
+        Vector2d k = new Vector2d(
+                (max.x - center.x) / (center.x - min.x),
+                (max.y - center.y) / (center.y - min.y)
         );
+
+        // рассчитываем новые границы
+        double newXMin = center.x - newSize.x / (k.x + 1);
+        double newYMin = center.y - newSize.y / (k.y + 1);
+
+        double newXMax = center.x + newSize.x * k.x / (k.x + 1);
+        double newYMax = center.y + newSize.y * k.y / (k.y + 1);
+
+        set(newXMin, newYMin, newXMax - newXMin, newYMax - newYMin);
     }
     /**
      * Получить максимальную координата
