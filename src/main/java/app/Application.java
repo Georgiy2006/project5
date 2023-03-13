@@ -3,6 +3,7 @@ package app;
 import controls.InputFactory;
 import controls.Label;
 import dialogs.PanelInfo;
+import dialogs.PanelSelectFile;
 import io.github.humbleui.jwm.*;
 import io.github.humbleui.jwm.skija.EventFrameSkija;
 import io.github.humbleui.skija.*;
@@ -75,6 +76,10 @@ public class Application implements Consumer<Event> {
      */
     public static Mode currentMode = Mode.WORK;
     /**
+     * Панель выбора файла
+     */
+    private final PanelSelectFile panelSelectFile;
+    /**
      * кнопка изменений: у мака - это `Command`, у windows - `Ctrl`
      */
     public static final KeyModifier MODIFIER = Platform.CURRENT == Platform.MACOS ? KeyModifier.MAC_COMMAND : KeyModifier.CONTROL;
@@ -109,6 +114,8 @@ public class Application implements Consumer<Event> {
         window = App.makeWindow();
 // панель информации
         panelInfo = new PanelInfo(window, true, DIALOG_BACKGROUND_COLOR, PANEL_PADDING);
+        // Панель выбора файла
+        panelSelectFile = new PanelSelectFile(window, true, DIALOG_BACKGROUND_COLOR, PANEL_PADDING);
         // создаём панель рисования
         panelRendering = new PanelRendering(
                 window, true, PANEL_BACKGROUND_COLOR, PANEL_PADDING, 5, 3, 0, 0,
@@ -190,7 +197,7 @@ public class Application implements Consumer<Event> {
             window.requestFrame();
             switch (currentMode) {
                 case INFO -> panelInfo.accept(e);
-                case FILE -> {}
+                case FILE -> panelSelectFile.accept(e);
                 case WORK -> {
                     // передаём события на обработку панелям
                     panelControl.accept(e);
@@ -241,9 +248,16 @@ public class Application implements Consumer<Event> {
                     }
             }
         }
-        panelControl.accept(e);
-        panelRendering.accept(e);
-        panelLog.accept(e);
+        switch (currentMode) {
+            case INFO -> panelInfo.accept(e);
+            case FILE -> panelSelectFile.accept(e);
+            case WORK -> {
+                // передаём события на обработку панелям
+                panelControl.accept(e);
+                panelRendering.accept(e);
+                panelLog.accept(e);
+            }
+        }
     }
     /**
      * Представление проблемы
@@ -263,7 +277,7 @@ public class Application implements Consumer<Event> {
         // рисуем диалоги
         switch (currentMode) {
             case INFO -> panelInfo.paint(canvas, windowCS);
-            case FILE -> {}
+            case FILE -> panelSelectFile.paint(canvas, windowCS);
         }
         canvas.restore();
 
