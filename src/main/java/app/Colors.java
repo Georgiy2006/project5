@@ -37,6 +37,18 @@ public class Colors {
     /**
      * Цвет подложки поля ввода
      */
+    /**
+     * Цвет подложки
+     */
+    public static final int STATS_BACKGROUND_COLOR = Misc.getColor(64, 51, 200, 51);
+    /**
+     * Цвет подложки
+     */
+    public static final int STATS_COLOR = Misc.getColor(255, 51, 200, 51);
+    /**
+     * Цвет текста
+     */
+    public static final int STATS_TEXT_COLOR = Misc.getColor(255, 255, 255, 255);
     public static final int FIELD_BACKGROUND_COLOR = Misc.getColor(255, 255, 255, 255);
     /**
      * Цвет текста

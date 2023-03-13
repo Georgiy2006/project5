@@ -5,10 +5,7 @@ import app.Task;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.github.humbleui.jwm.*;
 import io.github.humbleui.skija.Canvas;
-import misc.CoordinateSystem2d;
-import misc.CoordinateSystem2i;
-import misc.Vector2d;
-import misc.Vector2i;
+import misc.*;
 
 
 import java.io.File;
@@ -27,6 +24,10 @@ public class PanelRendering extends GridPanel {
      * Представление проблемы
      */
     public static Task task;
+    /**
+     * Статистика fps
+     */
+    private final Stats fpsStats=new Stats();
 
     /**
      * Панель управления
@@ -105,6 +106,8 @@ public class PanelRendering extends GridPanel {
     @Override
     public void paintImpl(Canvas canvas, CoordinateSystem2i windowCS) {
         task.paint(canvas, windowCS);
+        // рисуем статистику фпс
+        fpsStats.paint(canvas, windowCS, FONT12, padding);
         if (lastInside && lastMove != null)
             task.paintMouse(canvas, windowCS, FONT12, lastWindowCS.getRelativePos(lastMove));
     }
