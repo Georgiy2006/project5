@@ -2,6 +2,7 @@ package app;
 
 import controls.InputFactory;
 import controls.Label;
+import dialogs.PanelInfo;
 import io.github.humbleui.jwm.*;
 import io.github.humbleui.jwm.skija.EventFrameSkija;
 import io.github.humbleui.skija.*;
@@ -23,6 +24,23 @@ import static app.Fonts.FONT12;
  */
 
 public class Application implements Consumer<Event> {
+    /**
+     * Режимы работы приложения
+     */
+    public enum Mode {
+        /**
+         * Основной режим работы
+         */
+        WORK,
+        /**
+         * Окно информации
+         */
+        INFO,
+        /**
+         * работа с файлами
+         */
+        FILE
+    }
     /**
      * окно приложения
      */
@@ -53,6 +71,10 @@ public class Application implements Consumer<Event> {
      */
     private final PanelLog panelLog;
     /**
+     * Текущий режим(по умолчанию рабочий)
+     */
+    public static Mode currentMode = Mode.WORK;
+    /**
      * кнопка изменений: у мака - это `Command`, у windows - `Ctrl`
      */
     public static final KeyModifier MODIFIER = Platform.CURRENT == Platform.MACOS ? KeyModifier.MAC_COMMAND : KeyModifier.CONTROL;
@@ -77,11 +99,16 @@ public class Application implements Consumer<Event> {
      * Первый заголовок
      */
     private final Label label3;
+    /**
+     * Панель информации
+     */
+    private final PanelInfo panelInfo;
 
     public Application() {
 
         window = App.makeWindow();
-
+// панель информации
+        panelInfo = new PanelInfo(window, true, DIALOG_BACKGROUND_COLOR, PANEL_PADDING);
         // создаём панель рисования
         panelRendering = new PanelRendering(
                 window, true, PANEL_BACKGROUND_COLOR, PANEL_PADDING, 5, 3, 0, 0,
@@ -161,6 +188,16 @@ public class Application implements Consumer<Event> {
         } else if (e instanceof EventFrame) {
             // запускаем рисование кадра
             window.requestFrame();
+            switch (currentMode) {
+                case INFO -> panelInfo.accept(e);
+                case FILE -> {}
+                case WORK -> {
+                    // передаём события на обработку панелям
+                    panelControl.accept(e);
+                    panelRendering.accept(e);
+                    panelLog.accept(e);
+                }
+            }
         } else if (e instanceof EventFrameSkija ee) {
             // получаем поверхность рисования
             Surface s = ee.getSurface();
@@ -189,11 +226,16 @@ public class Application implements Consumer<Event> {
                 else
                     switch (eventKey.getKey()) {
                         case ESCAPE -> {
-                            window.close();
-                            // завершаем обработку, иначе уже разрушенный контекст
-                            // будет передан панелям
-                            return;
-
+                            // если сейчас основной режим
+                            if (currentMode.equals(Mode.WORK)) {
+                                // закрываем окно
+                                window.close();
+                                // завершаем обработку, иначе уже разрушенный контекст
+                                // будет передан панелям
+                                return;
+                            } else if (currentMode.equals(Mode.INFO)) {
+                                currentMode = Mode.WORK;
+                            }
                         }
                         case TAB -> InputFactory.nextTab();
                     }
@@ -213,10 +255,16 @@ public class Application implements Consumer<Event> {
         // очищаем канвас
         canvas.clear(APP_BACKGROUND_COLOR);
         // рисуем заголовок
+
         panelRendering.paint(canvas, windowCS);
         panelControl.paint(canvas, windowCS);
         panelLog.paint(canvas, windowCS);
         panelHelp.paint(canvas, windowCS);
+        // рисуем диалоги
+        switch (currentMode) {
+            case INFO -> panelInfo.paint(canvas, windowCS);
+            case FILE -> {}
+        }
         canvas.restore();
 
 

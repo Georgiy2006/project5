@@ -7,11 +7,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="108d2618-e3df-4fc5-9970-932f90c77b86" name="Changes" comment="mouse cursor">
-      <change afterPath="$PROJECT_DIR$/src/main/java/misc/Stats.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/misc/SumQueue.java" afterDir="false" />
+    <list default="true" id="108d2618-e3df-4fc5-9970-932f90c77b86" name="Changes" comment="help panel">
+      <change afterPath="$PROJECT_DIR$/src/main/java/dialogs/PanelInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/Application.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/app/Colors.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/Colors.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/panels/PanelRendering.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/panels/PanelRendering.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -114,7 +114,7 @@
       <workItem from="1676531638084" duration="2008000" />
       <workItem from="1676888876751" duration="5757000" />
       <workItem from="1678701888596" duration="1234000" />
-      <workItem from="1678703741447" duration="1856000" />
+      <workItem from="1678703741447" duration="2779000" />
     </task>
     <task id="LOCAL-00001" summary="skija connected">
       <created>1670240820299</created>
@@ -340,7 +340,21 @@
       <option name="project" value="LOCAL" />
       <updated>1678705430215</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="render statistic">
+      <created>1678705668086</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1678705668086</updated>
+    </task>
+    <task id="LOCAL-00034" summary="help panel">
+      <created>1678705772887</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1678705772887</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -358,8 +372,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="canvas works" />
-    <MESSAGE value="add setColor()" />
     <MESSAGE value="drawing rect works" />
     <MESSAGE value="int vector" />
     <MESSAGE value="panel created" />
@@ -383,6 +395,8 @@
     <MESSAGE value="unit tests" />
     <MESSAGE value="scale works" />
     <MESSAGE value="mouse cursor" />
-    <option name="LAST_COMMIT_MESSAGE" value="mouse cursor" />
+    <MESSAGE value="render statistic" />
+    <MESSAGE value="help panel" />
+    <option name="LAST_COMMIT_MESSAGE" value="help panel" />
   </component>
 </project>
