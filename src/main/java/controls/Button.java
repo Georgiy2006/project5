@@ -9,7 +9,9 @@ import io.github.humbleui.types.IRect;
 import misc.CoordinateSystem2i;
 import misc.Vector2i;
 
+import static app.Application.task;
 import static app.Colors.BUTTON_COLOR;
+import static app.Fonts.FONT12;
 
 /**
  * Класс кнопки

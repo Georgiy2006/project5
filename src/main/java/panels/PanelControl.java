@@ -16,6 +16,7 @@ import java.util.List;
 import static app.Application.PANEL_PADDING;
 import static app.Colors.FIELD_BACKGROUND_COLOR;
 import static app.Colors.FIELD_TEXT_COLOR;
+import static app.Fonts.FONT12;
 
 /**
  * Панель управления
