@@ -147,7 +147,7 @@ public class Task {
                 // центр окружности
                 Vector2i center = new Vector2i(350, 350);
                 // радиус окружности
-                int rad = 100;
+                int rad = (int) Math.sqrt((pA.x-pB.x)*(pA.x-pB.x)+(pA.y-pB.y)*(pA.y-pB.y));
                 // радиус вдоль оси x
                 int radX = (int) (rad * 1.3);
                 // радиус вдоль оси y
