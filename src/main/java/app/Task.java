@@ -76,6 +76,11 @@ public class Task {
      * будет нарисована увеличенная
      */
     private static final int DELIMITER_ORDER = 10;
+
+
+    Circle circle;
+
+
     /**
      * Задача
      *
@@ -91,7 +96,10 @@ public class Task {
         this.points = points;
         this.crossed = new ArrayList<>();
         this.single = new ArrayList<>();
+
+        this.circle = new Circle(new Vector2d(0, 0), new Vector2d(1, 2));
     }
+
     /**
      * Рисование
      *
@@ -106,6 +114,7 @@ public class Task {
         // рисуем задачу
         renderTask(canvas, windowCS);
     }
+
     /**
      * Рисование задачи
      *
@@ -131,9 +140,42 @@ public class Task {
                 // рисуем точку
                 canvas.drawRect(Rect.makeXYWH(windowPos.x - POINT_SIZE, windowPos.y - POINT_SIZE, POINT_SIZE * 2, POINT_SIZE * 2), paint);
             }
+
+            if (circle != null) {
+                Vector2i pA = windowCS.getCoords(circle.getPosA(), ownCS);
+                Vector2i pB = windowCS.getCoords(circle.getPosB(), ownCS);
+                // центр окружности
+                Vector2i center = new Vector2i(350, 350);
+                // радиус окружности
+                int rad = 100;
+                // радиус вдоль оси x
+                int radX = (int) (rad * 1.3);
+                // радиус вдоль оси y
+                int radY = (int) (rad * 0.9);
+                // кол-во отсчётов цикла
+                int loopCnt = 40;
+                // создаём массив координат опорных точек
+                float[] points = new float[loopCnt * 4];
+                // запускаем цикл
+                for (int i = 0; i < loopCnt; i++) {
+                    // x координата первой точки
+                    points[i * 4] = (float) (center.x + radX * Math.cos(Math.PI / 20 * i));
+                    // y координата первой точки
+                    points[i * 4 + 1] = (float) (center.x + radY * Math.sin(Math.PI / 20 * i));
+                    // x координата второй точки
+                    points[i * 4 + 2] = (float) (center.x + radX * Math.cos(Math.PI / 20 * (i + 1)));
+                    // y координата второй точки
+                    points[i * 4 + 3] = (float) (center.x + radY * Math.sin(Math.PI / 20 * (i + 1)));
+                }
+                // рисуем линии
+                canvas.drawLines(points, paint);
+            }
         }
+
+
         canvas.restore();
     }
+
     /**
      * Добавить точку
      *
@@ -147,6 +189,7 @@ public class Task {
         // Добавляем в лог запись информации
         PanelLog.info("точка " + newPoint + " добавлена в " + newPoint.getSetName());
     }
+
     /**
      * Клик мыши по пространству задачи
      *
@@ -165,6 +208,7 @@ public class Task {
             addPoint(taskPos, Point.PointSet.SECOND_SET);
         }
     }
+
     /**
      * Добавить случайные точки
      *
@@ -193,6 +237,7 @@ public class Task {
                 addPoint(pos, Point.PointSet.SECOND_SET);
         }
     }
+
     /**
      * Рисование сетки
      *
@@ -230,6 +275,7 @@ public class Task {
         // восстанавливаем область рисования
         canvas.restore();
     }
+
     /**
      * Очистить задачу
      */
@@ -237,6 +283,7 @@ public class Task {
         points.clear();
         solved = false;
     }
+
     /**
      * Решить задачу
      */
@@ -253,7 +300,7 @@ public class Task {
                 Point b = points.get(j);
                 // если точки совпадают по положению
                 if (a.pos.equals(b.pos) && !a.pointSet.equals(b.pointSet)) {
-                    if (!crossed.contains(a)){
+                    if (!crossed.contains(a)) {
                         crossed.add(a);
                         crossed.add(b);
                     }
@@ -268,12 +315,14 @@ public class Task {
         solved = true;
         PanelLog.warning("Вызван метод solve()\n Пока что решения нет");
     }
+
     /**
      * Отмена решения задачи
      */
     public void cancel() {
         solved = false;
     }
+
     /**
      * проверка, решена ли задача
      *
@@ -282,6 +331,7 @@ public class Task {
     public boolean isSolved() {
         return solved;
     }
+
     /**
      * Масштабирование области просмотра задачи
      *
@@ -295,6 +345,7 @@ public class Task {
         // выполняем масштабирование
         ownCS.scale(1 + delta * WHEEL_SENSITIVE, realCenter);
     }
+
     /**
      * Получить положение курсора мыши в СК задачи
      *
@@ -307,6 +358,7 @@ public class Task {
     public Vector2d getRealPos(int x, int y, CoordinateSystem2i windowCS) {
         return ownCS.getCoords(x, y, windowCS);
     }
+
     /**
      * Рисование курсора мыши
      *
