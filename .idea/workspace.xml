@@ -7,12 +7,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="108d2618-e3df-4fc5-9970-932f90c77b86" name="Changes" comment="middle2">
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/Straight.java" afterDir="false" />
+    <list default="true" id="108d2618-e3df-4fc5-9970-932f90c77b86" name="Changes" comment="Control">
+      <change afterPath="$PROJECT_DIR$/src/main/java/Report/Report" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/Task.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/misc/Vector2i.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/misc/Vector2i.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/panels/PanelControl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/panels/PanelControl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -122,7 +119,7 @@
       <workItem from="1678701888596" duration="1234000" />
       <workItem from="1678703741447" duration="4236000" />
       <workItem from="1683185899538" duration="1323000" />
-      <workItem from="1683561141037" duration="3776000" />
+      <workItem from="1683561141037" duration="7778000" />
     </task>
     <task id="LOCAL-00001" summary="skija connected">
       <created>1670240820299</created>
@@ -376,7 +373,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683186888330</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="Control">
+      <created>1683565822805</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1683565822805</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -394,7 +398,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="panel created" />
     <MESSAGE value="render text" />
     <MESSAGE value="text centering works" />
     <MESSAGE value="4 panels" />
@@ -419,6 +422,7 @@
     <MESSAGE value="help panel" />
     <MESSAGE value="info panel" />
     <MESSAGE value="middle2" />
-    <option name="LAST_COMMIT_MESSAGE" value="middle2" />
+    <MESSAGE value="Control" />
+    <option name="LAST_COMMIT_MESSAGE" value="Control" />
   </component>
 </project>
