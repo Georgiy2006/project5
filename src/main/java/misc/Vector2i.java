@@ -73,7 +73,16 @@ public class Vector2i {
     public static Vector2i subtract(Vector2i a, Vector2i b) {
         return new Vector2i(a.x - b.x, a.y - b.y);
     }
-
+    /**
+     * Умножение вектора на число
+     *
+     * @param v вектор
+     * @param s число
+     * @return результат умножения
+     */
+    public static Vector2i mult(Vector2i v, int s) {
+        return new Vector2i(v.x * s, v.y * s);
+    }
     /**
      * Получить случайное значение в заданном диапазоне [min,max)
      *

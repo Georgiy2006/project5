@@ -29,9 +29,12 @@ public class Task {
      */
     public static final String TASK_TEXT = """
             ПОСТАНОВКА ЗАДАЧИ:
-            Заданы два множества точек в вещественном
-            пространстве. Требуется построить пересечение
-            и разность этих множеств""";
+            На плоскости имеется окружность. 
+            Также имеется еще некоторое множество точек. 
+            По каждой паре точек этого множества строим прямые. 
+            Найти такие две пары точек, что построенные по ним 
+            две прямые пересекаются с окружностью
+            на минимальном расстоянии друг от друга.""";
 
     /**
      * коэффициент колёсика мыши
@@ -170,6 +173,18 @@ public class Task {
                 // рисуем линии
                 canvas.drawLines(points, paint);
             }
+            Vector2i pointA = new Vector2i(200, 200);
+            Vector2i pointB = new Vector2i(500, 600);
+            // вектор, ведущий из точки A в точку B
+            Vector2i delta = Vector2i.subtract(pointA, pointB);
+            // получаем максимальную длину отрезка на экране, как длину диагонали экрана
+            int maxDistance = (int) windowCS.getSize().length();
+            // получаем новые точки для рисования, которые гарантируют, что линия
+            // будет нарисована до границ экрана
+            Vector2i renderPointA = Vector2i.sum(pointA, Vector2i.mult(delta, maxDistance));
+            Vector2i renderPointB = Vector2i.sum(pointA, Vector2i.mult(delta, -maxDistance));
+            // рисуем линию
+            canvas.drawLine(renderPointA.x, renderPointA.y, renderPointB.x, renderPointB.y, paint);
         }
 
 
@@ -189,7 +204,19 @@ public class Task {
         // Добавляем в лог запись информации
         PanelLog.info("точка " + newPoint + " добавлена в " + newPoint.getSetName());
     }
-
+    /**
+     * Добавить окружность
+     *
+     * @param pos      положение
+     * @param pointSet множество
+     */
+    public void addCircle(Vector2d pos, Point.PointSet pointSet) {
+        solved = false;
+        Point newPoint = new Point(pos, pointSet);
+        points.add(newPoint);
+        // Добавляем в лог запись информации
+        PanelLog.info("точка " + newPoint + " добавлена в " + newPoint.getSetName());
+    }
     /**
      * Клик мыши по пространству задачи
      *

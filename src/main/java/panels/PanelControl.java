@@ -110,7 +110,7 @@ public class PanelControl extends GridPanel {
 
         Button addToSecondSet = new Button(
                 window, false, backgroundColor, PANEL_PADDING,
-                6, 7, 3, 3, 3, 1, "Добавить во второе\nмножество",
+                6, 7, 3, 3, 3, 1, "Добавить окружность",
                 true, true);
         addToSecondSet.setOnClick(() -> {
             // если числа введены верно
@@ -119,7 +119,7 @@ public class PanelControl extends GridPanel {
             } else if (!yField.hasValidDoubleValue())
                 PanelLog.warning("Y координата введена неверно");
             else {
-                PanelRendering.task.addPoint(
+                PanelRendering.task.addCircle(
                         new Vector2d(xField.doubleValue(), yField.doubleValue()), Point.PointSet.SECOND_SET
                 );
             }
@@ -135,18 +135,18 @@ public class PanelControl extends GridPanel {
                 FIELD_TEXT_COLOR, true);
         inputs.add(cntField);
 
-        Button addPoints = new Button(
+        Button addCircle = new Button(
                 window, false, backgroundColor, PANEL_PADDING,
-                6, 7, 3, 4, 3, 1, "Добавить\nслучайные точки",
+                6, 7, 3, 4, 3, 1, "Добавить\nслучайные окружности",
                 true, true);
-        addPoints.setOnClick(() -> {
+        addCircle.setOnClick(() -> {
             // если числа введены верно
             if (!cntField.hasValidIntValue()) {
                 PanelLog.warning("кол-во точек указано неверно");
             } else
                 PanelRendering.task.addRandomPoints(cntField.intValue());
         });
-        buttons.add(addPoints);
+        buttons.add(addCircle);
         Button load = new Button(
                 window, false, backgroundColor, PANEL_PADDING,
                 6, 7, 0, 5, 3, 1, "Загрузить",
