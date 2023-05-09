@@ -7,8 +7,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="108d2618-e3df-4fc5-9970-932f90c77b86" name="Changes" comment="Control">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Report/Report" afterDir="false" />
+    <list default="true" id="108d2618-e3df-4fc5-9970-932f90c77b86" name="Changes" comment="Middleee">
+      <change afterPath="$PROJECT_DIR$/.idea/Report" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -35,22 +35,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\shoninga.24\IdeaProjects\project5\src\main\resources" />
@@ -119,7 +119,8 @@
       <workItem from="1678701888596" duration="1234000" />
       <workItem from="1678703741447" duration="4236000" />
       <workItem from="1683185899538" duration="1323000" />
-      <workItem from="1683561141037" duration="7778000" />
+      <workItem from="1683561141037" duration="8563000" />
+      <workItem from="1683634035011" duration="354000" />
     </task>
     <task id="LOCAL-00001" summary="skija connected">
       <created>1670240820299</created>
@@ -380,7 +381,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683565822805</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="Middleee">
+      <created>1683573756293</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1683573756293</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -398,7 +406,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="render text" />
     <MESSAGE value="text centering works" />
     <MESSAGE value="4 panels" />
     <MESSAGE value="add task classes" />
@@ -423,6 +430,7 @@
     <MESSAGE value="info panel" />
     <MESSAGE value="middle2" />
     <MESSAGE value="Control" />
-    <option name="LAST_COMMIT_MESSAGE" value="Control" />
+    <MESSAGE value="Middleee" />
+    <option name="LAST_COMMIT_MESSAGE" value="Middleee" />
   </component>
 </project>
